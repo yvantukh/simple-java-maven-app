@@ -7,12 +7,11 @@ pipeline {
     
         
     stages {
-        
-        stage ('Build') {
+        stage('Build') {
             steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
-            
+        }   
         stage('Clean package') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
@@ -34,5 +33,4 @@ pipeline {
             }
         }
     }
-}
 }
