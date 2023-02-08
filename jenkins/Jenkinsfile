@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        maven 'maven 3.8.6'
+        maven 'Maven 3.8.6'
     }
     
         
@@ -30,6 +30,11 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
+            }
+        }
+        stage('Complete') {
+            steps {
+                echo 'Done'
             }
         }
     }
